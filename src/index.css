@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -64,5 +64,44 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+} */
+
+/* src/index.css */
+
+/* Basic reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* Hero layout: 2 columns on desktop, 1 column on mobile */
+.hero-inner {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Navbar layout tweaks on mobile */
+.nav-inner {
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
